@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import {Bar} from 'react-chartjs-2';
+import Sidebar from './Sidebar.js';
 import './App.css';
 
 class App extends Component {
@@ -50,10 +51,13 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <h1>Venmo Daily Spending Habits</h1>
-        <h4>{this.state.name}</h4>
-        <div className="graph-wrapper">
-          <Bar options={options} data={data} height={450}/>
+        <Sidebar />
+        <div className="Graph">
+          <h1>Venmo Daily Spending Habits</h1>
+          <h4>{this.state.name}</h4>
+          <div className="graph-wrapper">
+            <Bar options={options} data={data} height={450}/>
+          </div>
         </div>
       </div>
     );
